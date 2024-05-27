@@ -1,0 +1,4 @@
+libraries required for my application
+Flask
+csv
+os
