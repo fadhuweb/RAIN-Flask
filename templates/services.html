@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Air - Services</title>
+    <style>
+        /* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004d00; /* Dark Green */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-image: url('plane-sky.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #004d00;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #004d00;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service {
+    width: 45%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.service img {
+    width: 70%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    color: #004d00;
+    margin-top: 10px;
+}
+
+.service p {
+    font-size: 16px;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+
+footer a {
+    color: #004d00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-icons img {
+    width: 24px;
+    margin: 0 5px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Airline logo1.jpeg" alt="Celestial Air Logo">
+            <div class="logo-text">Celestial Air</div>
+        </div>
+        <nav>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Our Services</h1>
+    </div>
+    <div class="section">
+        <h2>Experience the Best with Celestial Air</h2>
+        <div class="services">
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\inflight entertainment.jpg" alt="In-Flight Entertainment">
+                <h3>In-Flight Entertainment</h3>
+                <p>Enjoy a wide variety of movies, TV shows, music, and games to make your journey enjoyable.</p>
+            </div>
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Gourmet meals.jpg" alt="Gourmet Meals">
+                <h3>Gourmet Meals</h3>
+                <p>Indulge in delicious meals prepared by top chefs, catering to all dietary needs and preferences.</p>
+            </div>
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Comfortable seating.jpg" alt="Comfortable Seating">
+                <h3>Comfortable Seating</h3>
+                <p>Relax in our spacious and comfortable seats, designed to provide maximum comfort throughout your flight.</p>
+            </div>
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Airport lounge.jpg" alt="Premium Lounges">
+                <h3>Premium Lounges</h3>
+                <p>Access our exclusive lounges at major airports, offering a peaceful and luxurious pre-flight experience.</p>
+            </div>
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Airline call centre.jpg" alt="Customer Support">
+                <h3>24/7 Customer Support</h3>
+                <p>Our dedicated customer support team is available around the clock to assist you with any queries.</p>
+            </div>
+            <div class="service">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\extra baggage.jpg" alt="Extra Baggage">
+                <h3>Extra Baggage Allowance</h3>
+                <p>Enjoy generous baggage allowances and flexible options for carrying extra luggage.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Facebook logo.png" alt="Facebook"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Twitter logo.png" alt="Twitter"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\instagram logo.png" alt="Instagram"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Tiktok logo.png" alt="Tiktok"></a>
+        </div>
+        <div>Contact: info@celestialair.com | 1-800-123-4567</div>
+        <div>&copy; 2024 Celestial Air. All rights reserved.</div>
+    </footer>
+</body>
+</html>

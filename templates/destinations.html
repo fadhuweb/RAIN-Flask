@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Air - Destinations</title>
+    <style>
+        /* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004d00; /* Dark Green */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-image: url('plane-sky.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #004d00;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #004d00;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.destinations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.destination {
+    width: 45%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.destination img {
+    width: 60%;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destination h3 {
+    color: #004d00;
+    margin-top: 10px;
+}
+
+.destination p {
+    font-size: 16px;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+
+footer a {
+    color: #004d00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-icons img {
+    width: 24px;
+    margin: 0 5px;
+}
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Airline logo1.jpeg" alt="Celestial Air Logo">
+            <div class="logo-text">Celestial Air</div>
+        </div>
+        <nav>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Our Destinations</h1>
+    </div>
+    <div class="section">
+        <h2>Explore Our Popular Destinations</h2>
+        <div class="destinations">
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\New york.jpg" alt="New York, USA">
+                <h3>New York, USA (JFK)</h3>
+                <p>The city that never sleeps offers endless attractions and experiences.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\eiffel tower.jpg" alt="Paris, France">
+                <h3>Paris, France (CDG)</h3>
+                <p>Experience the romance and charm of the City of Light.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\tokyo.jpg" alt="Tokyo, Japan">
+                <h3>Tokyo, Japan (NRT)</h3>
+                <p>Discover the unique blend of traditional and modern in Japan's capital.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Cape town.jpg" alt="Cape Town, South Africa">
+                <h3>Cape Town, South Africa (CPT)</h3>
+                <p>Explore the stunning landscapes and vibrant culture of Cape Town.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\london.jpg" alt="London, UK">
+                <h3>London, UK (LHR)</h3>
+                <p>Visit the historic landmarks and modern attractions of London.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\dubai.jpg" alt="Dubai, UAE">
+                <h3>Dubai, UAE (DXB)</h3>
+                <p>Experience the luxury and innovation of Dubai, a city like no other.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\sydney.jpg" alt="Sydney, Australia">
+                <h3>Sydney, Australia (SYD)</h3>
+                <p>Discover the beauty of Sydney, from its iconic Opera House to its stunning beaches.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\beijing.jpg" alt="Beijing, China">
+                <h3>Beijing, China (PEK)</h3>
+                <p>Explore the rich history and modern marvels of China's capital.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Lagos.jpg" alt="Lagos, Nigeria">
+                <h3>Lagos, Nigeria (LOS)</h3>
+                <p>Experience the vibrant culture and bustling markets of Lagos.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\johanesburg.jpg" alt="Johannesburg, South Africa">
+                <h3>Johannesburg, South Africa (JNB)</h3>
+                <p>Discover the dynamic and diverse city of Johannesburg.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\accra.jpg" alt="Accra, Ghana">
+                <h3>Accra, Ghana (ACC)</h3>
+                <p>Visit Accra and enjoy its rich history and warm hospitality.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\nairobi.jpg " alt="Nairobi, Kenya">
+                <h3>Nairobi, Kenya (NBO)</h3>
+                <p>Explore Nairobi's unique blend of wildlife and urban life.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Cairo.jpg" alt="Cairo, Egypt">
+                <h3>Cairo, Egypt (CAI)</h3>
+                <p>Discover the ancient wonders of Cairo, including the Pyramids of Giza.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\istanbul.jpg" alt="Istanbul, Turkey">
+                <h3>Istanbul, Turkey (IST)</h3>
+                <p>Experience the rich cultural tapestry of Istanbul, a city that bridges two continents.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\toronto.jpg" alt="Toronto, Canada">
+                <h3>Toronto, Canada (YYZ)</h3>
+                <p>Visit Toronto, a vibrant city known for its cultural diversity and iconic skyline.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Sao paolo.jpg" alt="Sao Paulo, Brazil">
+                <h3>Sao Paulo, Brazil (GRU)</h3>
+                <p>Explore the bustling metropolis of Sao Paulo, Brazil's largest city.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\mumbai.jpg" alt="Mumbai, India">
+                <h3>Mumbai, India (BOM)</h3>
+                <p>Discover Mumbai, the financial and entertainment capital of India.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Bangkok.jpg" alt="Bangkok, Thailand">
+                <h3>Bangkok, Thailand (BKK)</h3>
+                <p>Visit Bangkok, a city known for its vibrant street life and cultural landmarks.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\rome.jpg" alt="Rome, Italy">
+                <h3>Rome, Italy (FCO)</h3>
+                <p>Experience the history and beauty of Rome, the Eternal City.</p>
+            </div>
+            <div class="destination">
+                <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\moscow.jpg" alt="Moscow, Russia">
+                <h3>Moscow, Russia (SVO)</h3>
+                <p>Explore Moscow, a city known for its rich history and vibrant culture.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Facebook logo.png" alt="Facebook"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Twitter logo.png" alt="Twitter"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\instagram logo.png" alt="Instagram"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Tiktok logo.png" alt="Tiktok"></a>
+        </div>
+        <div>Contact: info@celestialair.com | 1-800-123-4567</div>
+        <div>&copy; 2024 Celestial Air. All rights reserved.</div>
+    </footer>
+</body>
+</html>

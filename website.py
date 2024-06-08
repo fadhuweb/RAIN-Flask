@@ -1,0 +1,95 @@
+from flask import Flask, render_template, request, session
+import pandas as pd
+import os
+
+app = Flask(__name__)
+app.secret_key = 'supersecretkey'
+
+# Define cities and their respective airports
+cities_airports = {
+    'Nigeria': ['Murtala Muhammed International Airport (Lagos)', 'Nnamdi Azikiwe International Airport (Abuja)', 'Port Harcourt International Airport (Port Harcourt)'],
+    'Ghana': ['Kotoka International Airport (Accra)'],
+    'South Africa': ['O.R. Tambo International Airport (Johannesburg)', 'Cape Town International Airport (Cape Town)'],
+    'Kenya': ['Jomo Kenyatta International Airport (Nairobi)'],
+    'Egypt': ['Cairo International Airport (Cairo)'],
+    'UK': ['Heathrow Airport (London)', 'Gatwick Airport (London)'],
+    'USA': ['John F. Kennedy International Airport (New York)', 'Los Angeles International Airport (Los Angeles)', 'O\'Hare International Airport (Chicago)'],
+    'France': ['Charles de Gaulle Airport (Paris)'],
+    'Germany': ['Frankfurt Airport (Frankfurt)', 'Munich Airport (Munich)'],
+    'Australia': ['Sydney Kingsford Smith Airport (Sydney)', 'Melbourne Airport (Melbourne)'],
+    'Canada': ['Toronto Pearson International Airport (Toronto)', 'Vancouver International Airport (Vancouver)'],
+    'Brazil': ['São Paulo-Guarulhos International Airport (São Paulo)', 'Rio de Janeiro-Galeão International Airport (Rio de Janeiro)'],
+    'China': ['Beijing Capital International Airport (Beijing)', 'Shanghai Pudong International Airport (Shanghai)'],
+    'Japan': ['Narita International Airport (Tokyo)', 'Haneda Airport (Tokyo)'],
+    'India': ['Indira Gandhi International Airport (Delhi)', 'Chhatrapati Shivaji Maharaj International Airport (Mumbai)'],
+    'Russia': ['Sheremetyevo International Airport (Moscow)', 'Domodedovo International Airport (Moscow)'],
+    'Italy': ['Leonardo da Vinci–Fiumicino Airport (Rome)', 'Malpensa Airport (Milan)'],
+    'Spain': ['Adolfo Suárez Madrid–Barajas Airport (Madrid)', 'Barcelona-El Prat Airport (Barcelona)'],
+    'Netherlands': ['Amsterdam Airport Schiphol (Amsterdam)']
+}
+
+csv_file = 'ticketdata.csv'
+
+# Ensure the CSV file exists with headers
+if not os.path.exists(csv_file):
+    df = pd.DataFrame(columns=['First Name', 'Surname', 'Departure City', 'Destination City', 'Number of Adults', 'Number of Children', 'Class', 'Date of Departure', 'Return Date'])
+    df.to_csv(csv_file, index=False)
+
+@app.route('/')
+def home():
+    return render_template('airline.html')
+
+@app.route('/about')
+def about():
+    return render_template('Airline_Aboutus.html')
+
+@app.route('/destinations')
+def destinations():
+    return render_template('destinations.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/book')
+def book():
+    return render_template('flight_booking.html', cities_airports=cities_airports)
+
+
+@app.route('/searchticket', methods=['POST'])
+def searchticket():
+    name = request.form['name']
+    departure_city = request.form['departure']
+    destination_city = request.form['destination']
+    number_of_adults = request.form['adults']
+    number_of_children = request.form.get('children', '0')
+    flight_class = request.form['class']
+    departure_date = request.form['departure_date']
+    return_date = request.form.get('return_date', '')
+
+    # Check if departure and destination cities are the same
+    if departure_city == destination_city:
+        return 'Departure and destination cities cannot be the same. Please choose different cities.'
+    if name == "Ruth":
+        return 'You are banned'
+    # Append data to CSV
+    new_data = pd.DataFrame({
+        'Name': [name],
+        'Departure City': [departure_city],
+        'Destination City': [destination_city],
+        'Number of Adults': [number_of_adults],
+        'Number of Children': [number_of_children],
+        'Class': [flight_class],
+        'Date of Departure': [departure_date],
+        'Return Date': [return_date]
+    })
+    new_data.to_csv(csv_file, mode='a', header=False, index=False)
+
+    return 'No flight available for the entered details'
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Celestial Air</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        header {
+            background-color: #004d00; /* Dark Green */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .logo .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #004d00;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #666666;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+        }
+        .about-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-content h3 {
+            color: #004d00;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .about-content ul {
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+        .about-content ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #666666;
+        }
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #dddddd;
+        }
+        footer a {
+            color: #004d00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer .social-icons img {
+            width: 24px;
+            margin: 0 5px;
+        }
+        @media (min-width: 768px) {
+            nav {
+                font-size: 18px;
+            }
+            .section h2 {
+                font-size: 36px;
+            }
+            .section p {
+                font-size: 20px;
+            }
+            .about-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Airline logo1.jpeg" alt="Celestial Air Logo">
+            <div class="logo-text">Celestial Air</div>
+        </div>
+        <nav>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        </nav>
+    </header>
+    <div class="section">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <h3>Our Mission</h3>
+            <p>At Celestial Air, our mission is to connect people, cultures, and communities through safe, reliable, and comfortable air travel. We strive to provide an exceptional flying experience that exceeds our customers' expectations.</p>
+            
+            <h3>Our Vision</h3>
+            <p>We envision a world where air travel is accessible, enjoyable, and environmentally sustainable. Celestial Air aims to be a leader in innovation, customer service, and sustainability in the aviation industry.</p>
+            
+            <h3>Our History</h3>
+            <p>Founded in 2015, Celestial Air has grown from a small regional airline to a global carrier, serving over 30 destinations worldwide. Our commitment to safety, quality, and customer satisfaction has been the cornerstone of our success.</p>
+            
+            <h3>Our Team</h3>
+            <p>Our team is comprised of passionate professionals dedicated to providing the highest level of service. From our pilots and flight attendants to our ground staff and customer service agents, every member of the Celestial Air family plays a crucial role in ensuring a seamless travel experience.</p>
+            
+            <h3>Our Values</h3>
+            <p>At Celestial Air, we believe in:</p>
+            <ul>
+                <li>Safety: The safety of our passengers and staff is our top priority.</li>
+                <li>Customer Service: We are committed to delivering exceptional service at every touchpoint.</li>
+                <li>Integrity: We conduct our business with honesty and transparency.</li>
+                <li>Innovation: We continuously seek new ways to improve and innovate in all aspects of our operations.</li>
+                <li>Sustainability: We are dedicated to minimizing our environmental impact and promoting sustainable practices.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="C:\Users\fadhl\Desktop\RAIN\Flask\templates\airline.html">Home</a>
+            <a href="{{ url_for('about')}}">About Us</a>
+            <a href="{{ url_for('destinations')}}">Destinations</a>
+            <a href="{{ url_for('book')}}">Book a Flight</a>
+            <a href="{{ url_for('services')}}">Services</a>
+            <a href="{{ url_for('contact')}}">Contact Us</a>
+        <div class="social-icons">
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Facebook logo.png" alt="Facebook"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Twitter logo.png" alt="Twitter"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\instagram logo.png" alt="Instagram"></a>
+            <a href="#"><img src="C:\Users\fadhl\Desktop\RAIN\Flask\static\Tiktok logo.png" alt="Tiktok"></a>
+        </div>
+        <div>Contact: info@celestialair.com | 1-800-123-4567</div>
+        <div>&copy; 2024 Celestial Air. All rights reserved.</div>
+    </footer>
+</body>
+</html>
